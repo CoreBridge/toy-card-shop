@@ -1,0 +1,21 @@
+:host {
+  display: block;
+}
+
+.cb-button-active {
+  background-color: #41525b !important;
+}
+
+.cb-empty-nav {
+  color: #99ca3d !important;
+  text-align: center;
+  padding: 8px;
+  font-style: italic;
+  opacity: 0.7;
+}
+
+a.cb-button {
+  display: block;
+  text-decoration: none;
+  text-align: left;
+}

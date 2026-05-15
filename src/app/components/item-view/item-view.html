@@ -1,0 +1,45 @@
+<div class="cb-item-view">
+  <textarea
+    rows="2"
+    [ngModel]="item().description"
+    (ngModelChange)="onDescriptionChange($event)"
+    aria-label="Item description"
+  ></textarea>
+
+  <div class="cb-item-row">
+    <label>
+      Card Price
+      <input
+        type="number"
+        min="0"
+        step="0.01"
+        [ngModel]="item().unitPrice"
+        (ngModelChange)="onUnitPriceChange($event)"
+      />
+    </label>
+
+    <label>
+      Qty
+      <input
+        type="number"
+        min="0"
+        step="1"
+        [ngModel]="item().quantity"
+        (ngModelChange)="onQuantityChange($event)"
+      />
+    </label>
+
+    <span class="cb-item-total">
+      Total: <strong>{{ lineTotal() | currency: 'USD' }}</strong>
+    </span>
+
+    <button
+      type="button"
+      class="cb-button cb-button-danger"
+      (click)="remove()"
+      aria-label="Remove item"
+    >
+      Remove
+    </button>
+  </div>
+</div>

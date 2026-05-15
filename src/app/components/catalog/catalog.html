@@ -1,0 +1,15 @@
+<aside class="cb-catalog">
+  <h2>Catalog</h2>
+
+  @if (disabled()) {
+    <p class="cb-catalog-hint">Select or create an order to add cards.</p>
+  }
+
+  @for (card of cards(); track card.cardID) {
+    <cb-catalog-card
+      [card]="card"
+      [disabled]="disabled()"
+      (add)="onAdd($event)"
+    />
+  }
+</aside>

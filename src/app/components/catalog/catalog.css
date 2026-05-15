@@ -1,0 +1,13 @@
+:host {
+  display: block;
+  min-width: 280px;
+}
+
+.cb-catalog h2 {
+  margin-top: 0;
+}
+
+.cb-catalog-hint {
+  color: #6c7a83 !important;
+  font-style: italic;
+}

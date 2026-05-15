@@ -1,0 +1,26 @@
+<nav class="cb-nav">
+  <div class="cb-label">Card Store Orders</div>
+
+  <button
+    type="button"
+    class="cb-button"
+    [disabled]="generating()"
+    (click)="newOrder()"
+  >
+    {{ generating() ? 'Generating...' : '+ New Order' }}
+  </button>
+
+  <div class="cb-label">Existing Orders</div>
+
+  @for (order of orders(); track order.orderID) {
+    <a
+      class="cb-button"
+      [routerLink]="['/orders', order.orderID]"
+      routerLinkActive="cb-button-active"
+    >
+      {{ order.orderName || '(unnamed)' }}
+    </a>
+  } @empty {
+    <div class="cb-empty-nav">No orders yet</div>
+  }
+</nav>

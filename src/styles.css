@@ -1,0 +1,112 @@
+/* ## BODY AND TITLE STYLES ## */
+body {
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  margin: 0;
+  padding: 10px;
+  background-color: #2b373d;
+  color: #99ca3d;
+}
+
+/* ## LAYOUT UTILITIES ## */
+.container {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+}
+
+/* ## MAIN CONTENT VIEWS ## */
+.cb-empty-view {
+  padding: 5vh;
+}
+
+.cb-order-view {
+  padding: 5vh;
+}
+
+/* ## COMPONENT STYLING ## */
+.cb-button {
+  background-color: #99ca3d !important;
+  color: #333 !important;
+  font-weight: bold;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  border: 1px solid transparent;
+}
+
+.cb-button:hover {
+  background-color: #a8de43 !important;
+}
+
+.cb-button:active {
+  background-color: #8ab637 !important;
+}
+
+/* Navigation component styling */
+.cb-nav {
+  width: 200px;
+  min-height: 95vh;
+  display: block;
+  background-color: #2b373d !important;
+  color: #99ca3d !important;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.cb-nav .cb-button {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  color: #99ca3d !important;
+  width: 100%;
+  margin-bottom: 4px;
+}
+
+.cb-nav .cb-button:hover {
+  background-color: #41525b !important;
+}
+
+.cb-nav .cb-label {
+  color: #99ca3d !important;
+  width: 100%;
+  text-align: center;
+  padding-top: 10px;
+  font-weight: bold;
+}
+
+/* Repeated inside the order view */
+.cb-item-view {
+  border: 1px solid black;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  padding: 2px 5px 5px 2px;
+}
+
+.cb-item-view textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Sibling to the order view */
+.cb-catalog {
+  padding: 5vh;
+}
+
+/* Repeated inside the catalog view */
+.cb-catalog-card {
+  background-color: #eee !important;
+  border: 1px solid black;
+  border-radius: 0px;
+  margin-bottom: 10px;
+  padding: 2px 5px 5px 2px;
+}
+
+.cb-catalog-card .cb-button {
+  float: right;
+}

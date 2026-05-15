@@ -1,0 +1,20 @@
+:host {
+  display: block;
+}
+
+.cb-catalog-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.cb-catalog-card p {
+  margin: 6px 0;
+  color: #2b373d !important;
+}
+
+.cb-button[disabled] {
+  background-color: #c2cbb4 !important;
+  cursor: not-allowed;
+}

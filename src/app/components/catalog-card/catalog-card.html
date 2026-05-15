@@ -1,0 +1,15 @@
+<div class="cb-catalog-card">
+  <div class="cb-catalog-card-header">
+    <strong>{{ card().cardName }}</strong>
+    <button
+      type="button"
+      class="cb-button"
+      [disabled]="disabled()"
+      (click)="onAdd()"
+    >
+      Add to Order
+    </button>
+  </div>
+  <p>{{ card().description }}</p>
+  <strong>{{ card().catalogPrice | currency: 'USD' }}</strong>
+</div>

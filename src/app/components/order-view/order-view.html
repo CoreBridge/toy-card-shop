@@ -1,0 +1,70 @@
+@if (order(); as o) {
+  <section class="cb-order-view">
+    <div class="cb-order-header">
+      <label>
+        Invoice
+        <input
+          type="text"
+          [ngModel]="o.orderName"
+          (ngModelChange)="onOrderNameChange($event)"
+        />
+      </label>
+
+      <label>
+        Customer
+        <input
+          type="text"
+          [ngModel]="o.customerName"
+          (ngModelChange)="onCustomerNameChange($event)"
+        />
+      </label>
+
+      <div class="cb-order-total">
+        Total: <strong>{{ o.totalPrice | currency: 'USD' }}</strong>
+      </div>
+    </div>
+
+    <h3>Items</h3>
+    @if (o.items.length === 0) {
+      <p class="cb-empty-items">
+        No items yet. Add cards from the catalog on the right.
+      </p>
+    } @else {
+      @for (item of o.items; track item.itemID) {
+        <cb-item-view [item]="item" />
+      }
+    }
+
+    <div class="cb-order-summary">
+      <div># of Cards: <strong>{{ o.cardCount }}</strong></div>
+      <div>
+        Average Card Price:
+        <strong>{{ o.averageCardPrice | currency: 'USD' }}</strong>
+      </div>
+      <div>
+        Total: <strong>{{ o.totalPrice | currency: 'USD' }}</strong>
+      </div>
+    </div>
+
+    <button
+      type="button"
+      class="cb-button cb-save"
+      [disabled]="saving()"
+      (click)="save()"
+    >
+      {{ saving() ? 'Saving...' : 'Save Changes' }}
+    </button>
+
+    @if (saveError(); as err) {
+      <p class="cb-save-error" role="alert">{{ err }}</p>
+    }
+  </section>
+} @else {
+  <section class="cb-empty-view">
+    <h2>Order Not Found</h2>
+    <p>The order ID in the URL does not match any loaded order.</p>
+    <button type="button" class="cb-button" (click)="goHome()">
+      Back to home
+    </button>
+  </section>
+}

@@ -1,0 +1,36 @@
+:host {
+  display: block;
+}
+
+.cb-item-row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.cb-item-row label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85rem;
+  color: #2b373d !important;
+}
+
+.cb-item-row input[type='number'] {
+  width: 90px;
+  padding: 4px 6px;
+}
+
+.cb-item-total {
+  margin-left: auto;
+}
+
+.cb-button-danger {
+  background-color: #d6534b !important;
+  color: #fff !important;
+}
+
+.cb-button-danger:hover {
+  background-color: #e0635c !important;
+}
